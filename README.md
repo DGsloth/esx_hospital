@@ -1,5 +1,7 @@
 # esx_hospital
-Resource created by someone (idk who) I just heavily modified it to my needs.
+Original resource created by [qalle-git](https://github.com/qalle-git/esx-qalle-jail)  
+Modified by [Warden Eternal](https://github.com/TheWardenEternal)
+
 ### Download
 - Download https://github.com/TheWardenEternal/esx_hospital/archive/main.zip
 - Put it in any directory
