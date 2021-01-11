@@ -17,6 +17,9 @@ start esx_hospital
 - Go to `server.lua` and change line 26 (or remove it) to announce that someone was hospitalized
 - To use the same bed locations, get this MLO (https://www.gabzv.com/products/pillbox-hospital-v2)
 
+### Requirements
+- Nothing
+
 ### Features
 - Anti-Combat Log (as soon as someone joins who was hospitalized previously, they will be put back into the hospital)
 - Anti-Leave (if someone who is hospitalized leaves the set area, it will teleport them back to a bed)
