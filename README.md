@@ -15,7 +15,7 @@ start esx_hospital
 
 - Add the SQL to your database
 - Go to `server.lua` and change line 26 (or remove it) to announce that someone was hospitalized
-- To use the same bed locations, get this MLO (https://www.gabzv.com/products/pillbox-hospital)
+- To use the same bed locations, get this MLO (https://www.gabzv.com/products/pillbox-hospital-v2)
 
 ### Features
 - Anti-Combat Log (as soon as someone joins who was hospitalized previously, they will be put back into the hospital)
