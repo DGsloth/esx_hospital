@@ -1,9 +1,9 @@
 # esx_hospital
 Original resource created by [qalle-git](https://github.com/qalle-git/esx-qalle-jail)  
-Modified by [sloth](https://github.com/DGSloth)
+Modified by [thatsimpressive](https://github.com/thatsimpressive)
 
 ### Download
-- Download https://github.com/DGSloth/esx_hospital/archive/main.zip
+- Download https://github.com/thatsimpressive/esx_hospital/archive/main.zip
 - Put it in any directory
 
 ### Installation
