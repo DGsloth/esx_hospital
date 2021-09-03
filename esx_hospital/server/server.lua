@@ -50,8 +50,8 @@ RegisterCommand('unadmit', function(src, args)
     end
 end)
 
-RegisterServerEvent('warden:UnHospitalPlayer')
-AddEventHandler('warden:UnHospitalPlayer', function(targetIdentifier)
+RegisterServerEvent('VanguardianDG:UnHospitalPlayer')
+AddEventHandler('VanguardianDG:UnHospitalPlayer', function(targetIdentifier)
     local src = source
     local xPlayer = ESX.GetPlayerFromIdentifier(targetIdentifier)
     if xPlayer then
@@ -62,19 +62,19 @@ AddEventHandler('warden:UnHospitalPlayer', function(targetIdentifier)
     TriggerClientEvent('esx:showNotification', src, xPlayer.name..' was unadmitted')
 end)
 
-RegisterServerEvent('warden:UpdateHospitalTime')
-AddEventHandler('warden:UpdateHospitalTime', function(newHospitalTime)
+RegisterServerEvent('VanguardianDG:UpdateHospitalTime')
+AddEventHandler('VanguardianDG:UpdateHospitalTime', function(newHospitalTime)
     local src = source
     EditAdmitTime(src, newHospitalTime)
 end)
 
 function Send2Hospital(hospitalPlayer, hospitalTime)
-    TriggerClientEvent('warden:SendToHospital', hospitalPlayer, hospitalTime)
+    TriggerClientEvent('VanguardianDG:SendToHospital', hospitalPlayer, hospitalTime)
     EditAdmitTime(hospitalPlayer, hospitalTime)
 end
 
 function UnAdmit(hospitalPlayer)
-    TriggerClientEvent('warden:UnHospitalPlayer', hospitalPlayer)
+    TriggerClientEvent('VanguardianDG:UnHospitalPlayer', hospitalPlayer)
     EditAdmitTime(hospitalPlayer, 0)
 end
 
@@ -90,7 +90,7 @@ function GetRPName(playerId, data)
     MySQL.Async.fetchAll('SELECT firstname, lastname FROM users WHERE identifier = @identifier', {['@identifier'] = Identifier}, function(result) data(result[1].firstname, result[1].lastname) end)
 end
 
-ESX.RegisterServerCallback('warden:GetHospitalTime', function(source, cb)
+ESX.RegisterServerCallback('VanguardianDG:GetHospitalTime', function(source, cb)
     local src = source
     local xPlayer = ESX.GetPlayerFromId(src)
     local Identifier = xPlayer.identifier

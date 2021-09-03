@@ -10,7 +10,7 @@ local hospitalTime = 0
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(newData)
     Citizen.Wait(10000)
-    ESX.TriggerServerCallback('warden:GetHospitalTime', function(isInHospital, newHospitalTime)
+    ESX.TriggerServerCallback('VanguardianDG:GetHospitalTime', function(isInHospital, newHospitalTime)
         if isInHospital then
             hospitalTime = newHospitalTime
             WelcomeBackYouCripple()
@@ -19,15 +19,15 @@ AddEventHandler('esx:playerLoaded', function(newData)
 end)
 
 disableStuff = false
-RegisterNetEvent('warden:SendToHospital')
-AddEventHandler('warden:SendToHospital', function(newHospitalTime)
+RegisterNetEvent('VanguardianDG:SendToHospital')
+AddEventHandler('VanguardianDG:SendToHospital', function(newHospitalTime)
     hospitalTime = newHospitalTime
     disableStuff = true
     SendToHospital()
 end)
 
-RegisterNetEvent('warden:UnHospitalPlayer')
-AddEventHandler('warden:UnHospitalPlayer', function()
+RegisterNetEvent('VanguardianDG:UnHospitalPlayer')
+AddEventHandler('VanguardianDG:UnHospitalPlayer', function()
     hospitalTime = 0
     disableStuff = false
     UnHospitalPlayer()
@@ -71,12 +71,12 @@ function CheckIfInHospital()
         while hospitalTime > 0 do
             hospitalTime = hospitalTime - 1
             ESX.ShowNotification('You have '..hospitalTime..' days left in the hospital')
-            TriggerServerEvent('warden:UpdateHospitalTime', hospitalTime)
+            TriggerServerEvent('VanguardianDG:UpdateHospitalTime', hospitalTime)
             disableStuff = true
             if hospitalTime == 0 then
                 UnHospitalPlayer()
                 disableStuff = false
-                TriggerServerEvent('warden:UpdateHospitalTime', 0)
+                TriggerServerEvent('VanguardianDG:UpdateHospitalTime', 0)
             end
             Citizen.Wait(60000)
         end
